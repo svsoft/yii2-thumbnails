@@ -1,0 +1,25 @@
+{
+  "name": "svsoft/yii2-thumbnails",
+  "description": "Yii2 component for resizing image and creating thumbnails based on svsoft/thumbnails",
+  "type": "yii2-extension",
+  "keywords": ["yii2", "resize", "image", "thumbnail", "crop"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Viktor Shiryakov",
+      "email": "shiryakovv@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "imagine/imagine": "*"
+  },
+  "extra": {
+
+  },
+  "autoload": {
+    "psr-4": {
+        "svsoft\\yii\\thumbnails\\": "src"
+    }
+  }
+}
