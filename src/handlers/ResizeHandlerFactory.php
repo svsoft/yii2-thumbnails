@@ -2,6 +2,7 @@
 
 namespace svsoft\yii\thumbnails\handlers;
 
+use svsoft\thumbnails\handlers\ResizeHandler;
 use svsoft\yii\thumbnails\AbstractFactory;
 
 /**
@@ -18,6 +19,6 @@ class ResizeHandlerFactory extends AbstractFactory
 
     function create()
     {
-        return new \svsoft\thumbnails\handlers\ResizeHandler($this->width, $this->height);
+        return new ResizeHandler($this->width, $this->height ?: $this->width);
     }
 }

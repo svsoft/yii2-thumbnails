@@ -2,6 +2,8 @@
 
 namespace svsoft\yii\thumbnails;
 
+use svsoft\thumbnails\exceptions\FileNotFoundException;
+use svsoft\thumbnails\exceptions\UnableOpenImageException;
 use svsoft\thumbnails\ImageStorageInterface;
 use svsoft\thumbnails\ThumbnailsInterface;
 use svsoft\thumbnails\ThumbCreator;
@@ -167,7 +169,22 @@ class Thumbnails extends BaseObject implements ThumbnailsInterface
     {
         $thumb = $this->getManager()->getThumb($thumbId);
 
-        return $this->getCreator()->create($imageUri, $thumb);
+        try
+        {
+            $url = $this->getCreator()->create($imageUri, $thumb);
+        }
+        catch(FileNotFoundException $exception)
+        {
+            $url = $this->getCreator()->getUrl($imageUri, $thumb);
+            \Yii::warning($exception->getMessage());
+        }
+        catch(UnableOpenImageException $exception)
+        {
+            $url = $this->getCreator()->getUrl($imageUri, $thumb);
+            \Yii::warning($exception->getMessage());
+        }
+
+        return $url;
     }
 
 }

@@ -2,6 +2,8 @@
 
 namespace svsoft\yii\thumbnails;
 
+use svsoft\yii\thumbnails\handlers\ResizeHandlerFactory;
+
 /**
  * Class ThumbFactory
  * @package svsoft\yii\thumbnails
@@ -21,7 +23,12 @@ class ThumbFactory extends AbstractFactory
         foreach($this->handlers as $key=>$handler)
         {
             if (is_array($handler))
+            {
+                if (empty($handler['class']))
+                    $handler['class'] = ResizeHandlerFactory::class;
+
                 $handler = \Yii::createObject($handler);
+            }
 
             $handlers[] = $handler->create();
         }

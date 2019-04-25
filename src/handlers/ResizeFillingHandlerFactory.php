@@ -25,7 +25,7 @@ class ResizeFillingHandlerFactory extends AbstractFactory
 
     function create()
     {
-        $handler = new \svsoft\thumbnails\handlers\ResizeFillingHandler($this->width, $this->height);
+        $handler = new \svsoft\thumbnails\handlers\ResizeFillingHandler($this->width, $this->height ?: $this->width);
 
         if ($this->opacity)
             $handler->opacity = $this->opacity;

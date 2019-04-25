@@ -33,7 +33,7 @@ class ResizeCropHandlerFactory extends AbstractFactory
 
     function create()
     {
-        $handler = new \svsoft\thumbnails\handlers\ResizeCropHandler($this->width, $this->height);
+        $handler = new \svsoft\thumbnails\handlers\ResizeCropHandler($this->width, $this->height ?: $this->width);
 
         if ($this->mode)
             $handler->mode = $this->mode;
