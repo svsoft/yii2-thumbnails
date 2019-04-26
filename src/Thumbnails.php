@@ -69,8 +69,11 @@ class Thumbnails extends BaseObject implements ThumbnailsInterface
 
     public function init()
     {
-        $this->dirPath = '@app/web/resize';
-        $this->webDirPath = '@web/resize';
+        if (!$this->dirPath)
+            $this->dirPath = '@app/web/resize';
+
+        if (!$this->webDirPath)
+            $this->webDirPath = '@web/resize';
 
         parent::init();
     }
