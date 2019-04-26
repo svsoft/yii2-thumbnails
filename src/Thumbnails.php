@@ -67,6 +67,14 @@ class Thumbnails extends BaseObject implements ThumbnailsInterface
      */
     private $_creator;
 
+    public function init()
+    {
+        $this->dirPath = '@app/web/resize';
+        $this->webDirPath = '@web/resize';
+
+        parent::init();
+    }
+
     public function getManager() : ThumbManagerInterface
     {
         if ($this->_manager === null)
