@@ -1,8 +1,11 @@
 yii2-thumbnails
 ===================
 
-Component for resize images for yii2. Creates thumbnails of pictures with various handlers: resize, crop, fill, watermark.
-You can also create your handlers, and add them to the description of the thumbnail. based on [svsoft/thumbnails](https://github.com/svsoft/thumbnails)
+It is adapter for Yii2 based on [svsoft/thumbnails](https://github.com/svsoft/thumbnails) component for resize images on native php.
+
+Creates thumbnails of pictures with various handlers: resize, crop, fill, watermark.
+You can also create your handlers, and add them to the description of the thumbnail.
+
 
 ### Features:
 * Supports different types of source image storage.
@@ -11,9 +14,8 @@ You can also create your handlers, and add them to the description of the thumbn
 * Simple apply of new handlers In the previously described thumbnails
 * Ability to create your own custom image handlers
 
-In the library everywhere is used interfaces, you can implementation necessary logic in your classes
 
-For those who are developing on YII2 there is an adapter of this library [svsoft/yii2-thumbnails](https://github.com/svsoft/yii2-thumbnails)
+In the library everywhere is used interfaces, you can implementation necessary logic in your classes
 
 Installation
 ---
