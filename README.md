@@ -84,12 +84,12 @@ Add to config
 
 #### Properties
 
-- string dirPath - Path to thumbnail file storage directory
-- string webDirPath - Public web path to thumbnail file storage directory
-- array thumbs - List of thumbnail configuration
-- AbstractFactory $imageStorage - Not required. Description of image storage. 
+- dirPath - Path to thumbnail file storage directory
+- webDirPath - Public web path to thumbnail file storage directory
+- thumbs - List of thumbnail configuration
+- $imageStorage - Not required. Description of image storage. 
 Now implementation only local image storage which is set by default set. (FTP, HTTP, DB NOT IMPLEMENTATION!)
-- AbstractFactory $thumbStorage - Not required. Description of thumb storage. 
+- $thumbStorage - Not required. Description of thumb storage. 
 Now implementation only local thumb storage which is set by default set. (FTP, HTTP, DB NOT IMPLEMENTATION!)
 
 
